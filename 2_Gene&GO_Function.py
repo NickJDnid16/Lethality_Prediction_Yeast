@@ -16,8 +16,9 @@ geneAssociation = csv.reader(geneAssociation, delimiter='\t')
 for rows in geneAssociation:
 
     if(rows[0] == "SGD"):#FlyBase = FB
-
-        genome = rows[2]
+        head, sep, tail = rows[10].partition('|')
+        genome = head
+        print genome
         GO = rows[4]
         dataMarker = rows[6]
         data[genome] = data.get(genome,"")+GO+","+dataMarker+","
@@ -42,7 +43,7 @@ for line in open('./Single_Lethality_Genes.txt', mode='r'):
     split_line = line.split(",")
     gene = split_line[0]
     lethality = split_line[1]
-    print "Lethality is " + lethality
+    #print "Lethality is " + lethality
     if "inviable" in lethality:
         for line in FUNC:
             tempFUNC = []
@@ -50,7 +51,7 @@ for line in open('./Single_Lethality_Genes.txt', mode='r'):
                 geneSeen.append(line)
                 line = line.strip()
                 tempFUNC.append(str(line) + "\t1")
-                print tempFUNC
+                #print tempFUNC
                 newFUNC.append(tempFUNC)
     if "viable" in lethality:
         for line in FUNC:
@@ -60,10 +61,10 @@ for line in open('./Single_Lethality_Genes.txt', mode='r'):
                 line = line.replace('\n','')
                 tempFUNC.append(str(line) + "\t0")
 
-                print tempFUNC
+                #print tempFUNC
                 newFUNC.append(tempFUNC)
 
-        print "Something"
+        #print "Something"
         #print tempFUNC
 #FUNCoutputfile.write("\n".join(newFUNC))
 

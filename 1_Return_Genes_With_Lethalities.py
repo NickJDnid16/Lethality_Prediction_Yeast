@@ -26,82 +26,15 @@ inputfile = csv.reader(inputfile, delimiter='\t')
 outputfile = csv.writer(outputfile)
 
 for row in inputfile:
+
     count = int (1)
     del row[1]
+
     if count > 0:
         #outputfile.writerows(row[0])
         outputfile.writerows(repeat(row[0:1] + row[8:9], count))
 
 
-
-
-# outputfile = open('./Removed_Partial_Lethality.txt', mode='w')
-# sys.exit("STOPPED")
-# P_Temp = []
-# W_Temp = []
-#
-# for line in codecs.open('./Allele&Lethality_Rows.txt', mode ='r'):
-#     if not "partially" in line:
-#         print (line)
-#         P_Temp.append(line)
-#
-# for line in P_Temp:
-#     if not "with" in line:
-#             print(line)
-#             W_Temp.append(line)
-#
-# for line in W_Temp:
-#     if not "poor" in line :
-#         print(line)
-#         outputfile.write(line)
-#
-# outputfile.close()
-
-
-# inputfile = open('./Removed_Partial_Lethality.txt', mode='r')
-# outputfile = open('./Gene&Lethality_Only.txt', mode='w')
-#
-# inputfile = csv.reader(inputfile, delimiter=',')
-#
-# for row in inputfile:
-#
-#
-#     #del row[1]
-#     Temp = (str(row[0]))
-#     Temp = Temp.split('[')[0].strip()
-#     #Temp = Temp.replace(',','')
-#     print Temp
-#     print
-#     outputfile.write(Temp)
-#     outputfile.write(',')
-#     outputfile.write(str(row[1]))
-#     outputfile.write('\n')
-#
-#
-# #############################################################
-
-#
-# inputfile = open('./Gene&Lethality_Only.txt', mode='r')
-# outputfile = open('./Gene_With_Lethal&Viable_Only.txt', mode='w')
-#
-# inputfile = csv.reader(inputfile, delimiter=',')
-#
-# for row in inputfile:
-#
-#
-#     #del row[1]
-#     Temp = (str(row[1]))
-#     if "lethal" in Temp:
-#         Temp = "lethal"
-#     if "viable" in Temp:
-#         Temp = "viable"
-#
-#     outputfile.write(str(row[0]))
-#     outputfile.write(",")
-#     outputfile.write(Temp)
-#     outputfile.write('\n')
-#
-# #############################################################
 
 
 data = {}
