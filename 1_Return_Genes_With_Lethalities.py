@@ -67,7 +67,8 @@ outputfile.close()
 
 outputfile = open('./Single_Lethality_Genes.txt', mode='w')
 inputfile = open('./Genes_With_All_Lethality.txt', mode='r')
-essOutputfile = open('./Lethal_Yeast.txt', mode='w')
+LethalOutput = open('./Lethal_Yeast_BG.txt', mode='w')
+Viable_LethalOutput= open('./Lethal&Viable_Yeast_BG.txt', mode='w')
 for line in inputfile:
     v = ",viable" in line
     l = ",inviable" in line
@@ -83,11 +84,13 @@ for line in inputfile:
             bit = bits[0]+",viable\n"
             print (bit)
             outputfile.write(bit)
+            Viable_LethalOutput.write(bits[0] + "\n")
         if(l):
             bit = bits[0]+",inviable\n"
             print (bit)
             outputfile.write(bit)
-            essOutputfile.write(bits[0] + "\n")
+            LethalOutput.write(bits[0] + "\n")
+            Viable_LethalOutput.write(bits[0] + "\n")
         if ((not l) and (not v)):
             print("Not Viable OR Lethal")
 

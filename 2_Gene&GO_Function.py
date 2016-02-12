@@ -92,14 +92,16 @@ outputfile.close()
 
 inputfile = open('./Gene&GO_F.txt', mode='r')
 outputfile = open('./Gene&GO_F_With_Lethality.txt', mode='w')
-
+LethalOutput = open('./Lethal_Yeast.txt', mode='w')
+Viable_LethalOutput= open('./Lethal&Viable_Yeast.txt', mode='w')
 inputfile = csv.reader(inputfile, delimiter=',')
 
 previous = None
 
 
 writer = csv.writer(outputfile)
-
+Lethalwriter = csv.writer(LethalOutput)
+VLwriter = csv.writer(Viable_LethalOutput)
 
 
 for rows in inputfile:
@@ -108,4 +110,8 @@ for rows in inputfile:
 
             if "GO" in str(rows):
                 writer.writerow(rows)
+                VLwriter.writerow(rows[0:1])
+                if "inviable" in str(rows[-1]):
+                    Lethalwriter.writerow(rows[0:1])
+
                 print rows
