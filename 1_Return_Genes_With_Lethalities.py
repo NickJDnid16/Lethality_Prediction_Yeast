@@ -8,8 +8,8 @@ import codecs
 from itertools import repeat
 import csv
 import sys
-inputfile = open('./phenotype_data.tab', mode='r')
-outputfile = open('./Lethal&Viable_Genes.txt', mode='w')
+inputfile = open('./phenotype_data.tab', mode='rb')
+outputfile = open('./Lethal&Viable_Genes.txt', mode='wb')
 
 for line in inputfile:
     if "inviable" in line or "viable" in line:
@@ -19,8 +19,8 @@ inputfile.close()
 outputfile.close()
 
 
-inputfile = open('./Lethal&Viable_Genes.txt', mode='r')
-outputfile = open('./Genes&Lethality_Rows.txt', mode='w')
+inputfile = open('./Lethal&Viable_Genes.txt', mode='rb')
+outputfile = open('./Genes&Lethality_Rows.txt', mode='wb')
 
 inputfile = csv.reader(inputfile, delimiter='\t')
 outputfile = csv.writer(outputfile)
@@ -41,8 +41,8 @@ data = {}
 
 
 #inputfile = open('./Gene_With_Lethal&Viable_Only.txt', mode='r')
-inputfile = open('./Genes&Lethality_Rows.txt', mode='r')
-outputfile = open('./Genes_With_All_Lethality.txt', mode='w')
+inputfile = open('./Genes&Lethality_Rows.txt', mode='rb')
+outputfile = open('./Genes_With_All_Lethality.txt', mode='wb')
 
 for line in inputfile:
     split_string = line.split(",")
@@ -65,10 +65,10 @@ outputfile.close()
 
 
 
-outputfile = open('./Single_Lethality_Genes.txt', mode='w')
-inputfile = open('./Genes_With_All_Lethality.txt', mode='r')
-LethalOutput = open('./Lethal_Yeast_BG.txt', mode='w')
-Viable_LethalOutput= open('./Lethal&Viable_Yeast_BG.txt', mode='w')
+outputfile = open('./Single_Lethality_Genes.txt', mode='wb')
+inputfile = open('./Genes_With_All_Lethality.txt', mode='rb')
+LethalOutput = open('./Lethal_Yeast_BG.txt', mode='wb')
+Viable_LethalOutput= open('./Lethal&Viable_Yeast_BG.txt', mode='wb')
 for line in inputfile:
     v = ",viable" in line
     l = ",inviable" in line

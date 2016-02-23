@@ -224,7 +224,7 @@ YLR379W,inviable
 YJR139C,viable
 YBR133C,viable
 YBR162C,viable
-YNL331C,viable
+YOR130C,viable
 YJL079C,viable
 YGL019W,viable
 YGR201C,viable
@@ -246,7 +246,7 @@ YOR031W,viable
 YBR282W,viable
 YDR194C,viable
 YOL114C,viable
-YJR108W,viable
+YMR244C-A,viable
 YNR030W,viable
 YAL037C-A,viable
 YML007C-A,viable
@@ -448,7 +448,7 @@ YMR021C,viable
 YMR074C,viable
 YJR039W,viable
 YDL158C,viable
-YOR104W,viable
+YNL323W,viable
 YFL009W,inviable
 YLR297W,viable
 YLR279W,viable
@@ -939,7 +939,6 @@ YCR100C,viable
 YDR516C,viable
 YPL233W,inviable
 YOR255W,viable
-YOR063W,inviable
 YOR200W,viable
 YGR251W,inviable
 YPR047W,viable
@@ -1007,7 +1006,6 @@ YLR455W,viable
 YNL247W,inviable
 YOR054C,viable
 YGL007C-A,viable
-YOR121C,viable
 YFR028C,inviable
 YGR290W,viable
 YBR152W,inviable
@@ -1123,7 +1121,7 @@ YHR118C,inviable
 YGR024C,inviable
 YOL023W,viable
 YPL253C,viable
-YOR008C-A,viable
+YOR259C,inviable
 YER154W,viable
 YBR300C,viable
 YEL036C,viable
@@ -1178,11 +1176,10 @@ YKL104C,inviable
 YBL091C-A,viable
 YLR361C-A,viable
 YOR170W,viable
-YOR292C,viable
 YHR038W,viable
 YML069W,inviable
 YKR019C,viable
-YJR073C,viable
+YKR047W,viable
 YGR279C,viable
 YCR073C,viable
 YCR022C,viable
@@ -1338,7 +1335,7 @@ YBR139W,viable
 YHR188C,inviable
 YKL106C-A,viable
 YNL116W,viable
-YNL139C,viable
+YJR087W,viable
 YDR361C,inviable
 YLR445W,viable
 YGL255W,viable
@@ -1789,7 +1786,7 @@ YAL044C,viable
 YBR124W,inviable
 YDR284C,viable
 YJL097W,inviable
-YNL302C,viable
+YOR121C,viable
 YOR048C,inviable
 YHR143W,viable
 YMR315W-A,viable
@@ -2208,7 +2205,7 @@ YBR120C,viable
 YDR280W,inviable
 YHR138C,viable
 YPR189W,viable
-YOR259C,inviable
+YOR008C-A,viable
 YGR197C,viable
 YIL099W,viable
 YLL024C,viable
@@ -2270,7 +2267,7 @@ YMR080C,viable
 YMR037C,viable
 YGL025C,viable
 YCR102W-A,viable
-YLR346C,viable
+YML121W,viable
 YPR007C,viable
 YMR117C,inviable
 YDL124W,viable
@@ -2279,7 +2276,6 @@ YGR266W,viable
 YGR219W,viable
 YHR163W,viable
 YNR061C,viable
-YMR244C-A,viable
 YLR272C,inviable
 YOR005C,viable
 YDL226C,viable
@@ -2396,7 +2392,7 @@ YOL050C,viable
 YIL042C,viable
 YIL035C,viable
 YIL159W,viable
-YML121W,viable
+YLR346C,viable
 YLR339C,inviable
 YJR106W,viable
 YKL010C,viable
@@ -2716,7 +2712,7 @@ YHL020C,viable
 YIL009W,viable
 YFR042W,inviable
 YOR066W,viable
-YOR354C,viable
+YOR063W,inviable
 YGL223C,viable
 YGR032W,viable
 YJR145C,viable
@@ -2927,6 +2923,7 @@ YJL057C,viable
 YGR130C,viable
 YGR165W,viable
 YGR055W,viable
+YNL139C,viable
 YBR254C,inviable
 YBR136W,inviable
 YPL186C,viable
@@ -2997,7 +2994,7 @@ YOR139C,viable
 YJL059W,viable
 YMR047C,inviable
 YNL338W,viable
-YGR221C,viable
+YOR287C,inviable
 YDR247W,viable
 YGR274C,inviable
 YML055W,viable
@@ -3182,7 +3179,7 @@ YLR432W,viable
 YJR004C,viable
 YIR027C,viable
 YJL115W,viable
-YKR047W,viable
+YJR073C,viable
 YGL004C,viable
 tK(CUU)E1,viable
 YMR292W,viable
@@ -3362,6 +3359,7 @@ YBL005W,viable
 YDR193W,viable
 YDR041W,inviable
 YGL047W,inviable
+YJR108W,viable
 YCR105W,viable
 YBL101C,viable
 YPL236C,viable
@@ -3455,6 +3453,7 @@ YLR184W,viable
 YJL217W,viable
 YLR399C,viable
 YAL011W,viable
+YBR036C,viable
 YBR244W,viable
 YBR179C,viable
 YPL155C,viable
@@ -3893,7 +3892,7 @@ YJL213W,viable
 YLR406C,viable
 YDR416W,inviable
 YOR277C,viable
-YJL003W,viable
+YGL129C,viable
 YOL065C,viable
 YMR181C,viable
 YBL022C,viable
@@ -3929,7 +3928,7 @@ YLR139C,viable
 YMR277W,inviable
 YML049C,inviable
 YCR068W,viable
-YLR330W,viable
+YLR446W,viable
 YGL125W,viable
 YLR164W,viable
 YKR104W,viable
@@ -4073,7 +4072,7 @@ YKL105C,viable
 YDL087C,inviable
 YKL150W,viable
 YOR173W,viable
-YNL323W,viable
+YOR104W,viable
 YFR031C-A,viable
 YPL091W,viable
 YIR008C,inviable
@@ -4203,6 +4202,7 @@ tY(GUA)M2,viable
 tY(GUA)M1,viable
 YGL040C,inviable
 YBR194W,viable
+YOR354C,viable
 YMR316W,viable
 YIL038C,viable
 YIL138C,viable
@@ -4216,7 +4216,7 @@ YGL081W,viable
 YGR103W,inviable
 YGR178C,viable
 YGR057C,viable
-YJR087W,viable
+YOR292C,viable
 YGL143C,viable
 YJR123W,inviable
 YOL075C,viable
@@ -4585,7 +4585,6 @@ YLR108C,viable
 YKR008W,inviable
 YDR108W,viable
 YER041W,viable
-YBR036C,viable
 YGL102C,inviable
 YMR079W,inviable
 YMR126C,viable
@@ -4661,7 +4660,7 @@ YNR075W,viable
 YML113W,viable
 YHR202W,viable
 YHR008C,viable
-YLR446W,viable
+YLR330W,viable
 YHL037C,viable
 YNR068C,viable
 YGR129W,viable
@@ -5017,7 +5016,7 @@ YDR399W,viable
 YML016C,viable
 YLR133W,viable
 YDL017W,inviable
-YJR142W,viable
+YOR060C,inviable
 YOR235W,viable
 YGL263W,viable
 YGR282C,viable
@@ -5038,7 +5037,7 @@ YOR165W,viable
 YPR150W,viable
 YAL005C,viable
 YPR105C,inviable
-YOR130C,viable
+YNL331C,viable
 YPL083C,inviable
 YDR357C,viable
 YJR021C,viable
@@ -5113,6 +5112,7 @@ YJL019W,inviable
 YMR116C,viable
 YNL047C,viable
 YDR256C,viable
+YNL302C,viable
 YGL030W,inviable
 YJL033W,inviable
 YHR049C-A,viable
@@ -5292,7 +5292,6 @@ YMR245W,viable
 YLR341W,viable
 YDR029W,viable
 YGR058W,viable
-YGL129C,viable
 YBR053C,viable
 YDL192W,viable
 YLR029C,inviable
@@ -5572,6 +5571,7 @@ YPR113W,inviable
 YKL161C,viable
 YBR251W,viable
 YIL113W,viable
+YMR099C,viable
 YOL107W,viable
 YGR135W,viable
 YGL219C,viable
@@ -5636,7 +5636,7 @@ YBR047W,viable
 YNL273W,viable
 YMR010W,viable
 YNL294C,viable
-YMR099C,viable
+YJL003W,viable
 YKR057W,viable
 YOR284W,viable
 YOR163W,viable
@@ -5828,7 +5828,7 @@ YOR316C-A,viable
 YHL023C,viable
 YGR031W,viable
 YOR035C,viable
-YOR060C,inviable
+YJR142W,viable
 YER158C,viable
 YMR173W,viable
 YMR250W,viable
@@ -5956,7 +5956,7 @@ YDL123W,viable
 tA(UGC)E,viable
 YMR087W,viable
 YNL236W,viable
-YOR287C,inviable
+YGR221C,viable
 YJR105W,viable
 YDL072C,viable
 YOR328W,viable
