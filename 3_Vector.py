@@ -8,6 +8,7 @@ import json
 import sys
 import time
 
+
 counter = 1
 
 from pygraph.classes.digraph import digraph
@@ -18,9 +19,9 @@ gr = digraph()
 count = 0
 
 # Input
-GraphInput = codecs.open('./Refined_GO_Nodes.txt', encoding='utf-8', mode='r')
+GraphInput = codecs.open('./Refined_GO_Nodes.txt', encoding='utf-8', mode='rb')
 
-EdgesInput = codecs.open('./GO_Children&Parents.txt', encoding='utf-8', mode='r')
+EdgesInput = codecs.open('./GO_Children&Parents.txt', encoding='utf-8', mode='rb')
 
 with open('./GO_Children&Parents.txt') as json_file:
     json_data = json.load(json_file)
@@ -110,10 +111,10 @@ debug = 0
 # outputfile = open('/home/mint/git/prediction-of-Lethality-in-Fly-Mutants-using-Machine-Learning/Workspace/Lethality Extraction/Vector.txt')
 data = open('./Gene&GO_F_With_Lethality.txt')
 
-outputfile = open('./BinVec.txt', mode='w')
-OutMissing = open('./Missing.txt', mode='w')
-OutParents = open('./Parents.txt', mode='w')
-Genes = open('./Genes.txt', mode='w')
+outputfile = open('./BinVec.txt', mode='wb')
+OutMissing = open('./Missing.txt', mode='wb')
+OutParents = open('./Parents.txt', mode='wb')
+Genes = open('./Genes.txt', mode='wb')
 for line in data:
     debug = debug + 1
     csv = line.split(",")

@@ -11,10 +11,10 @@ from datetime import datetime
 
 startTime = datetime.now()
 
-OutPut = codecs.open('./Lethality&Vector.txt', encoding='utf-8', mode='w')
+OutPut = codecs.open('./Lethality&Vector.txt', encoding='utf-8', mode='wb')
 
 lines = 0
-for BinLine in codecs.open('./BinVec.txt',encoding='utf-8', mode='r'):
+for BinLine in codecs.open('./BinVec.txt',encoding='utf-8', mode='rb'):
     csv = BinLine.split(",")
 
     Gene = csv[0]

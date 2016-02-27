@@ -10,7 +10,7 @@ import codecs
 
 GraphInput = open('./GO_Children&Parents.txt', mode='r')
 
-outputfile = open('./GO_Nodes.txt', mode='w')
+outputfile = open('./GO_Nodes.txt', mode='wb')
 
 GO_Seen = set()
 
@@ -29,9 +29,9 @@ for line in GraphInput:
 outputfile.close()
 
 
-NodesInput = open('./GO_Nodes.txt', mode='r')
+NodesInput = open('./GO_Nodes.txt', mode='rb')
 
-NodesOutput = open('./Refined_GO_Nodes.txt', mode='w')
+NodesOutput = open('./Refined_GO_Nodes.txt', mode='wb')
 
 Nodes_Seen = set()
 
