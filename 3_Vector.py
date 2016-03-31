@@ -7,8 +7,7 @@ import codecs
 import json
 import sys
 import time
-
-
+import csv
 counter = 1
 
 from pygraph.classes.digraph import digraph
@@ -108,18 +107,26 @@ def Duplicates(Up):
 
 
 debug = 0
-# outputfile = open('/home/mint/git/prediction-of-Lethality-in-Fly-Mutants-using-Machine-Learning/Workspace/Lethality Extraction/Vector.txt')
-data = open('./Gene&GO_F_With_Lethality.txt')
+
+data = open('./Gene&GO_F_With_Lethality.txt', mode="rb")
+
 
 outputfile = open('./BinVec.txt', mode='wb')
 OutMissing = open('./Missing.txt', mode='wb')
 OutParents = open('./Parents.txt', mode='wb')
-Genes = open('./Genes.txt', mode='wb')
+
+Testing = open('./Testings.txt', mode='wb')
+
+Func = []
+TempFunc  = []
+
 for line in data:
+
     debug = debug + 1
     csv = line.split(",")
     Gene = csv[0]
     print(csv[0])
+
 
     Continue = True
     csvCount = 0
@@ -135,6 +142,9 @@ for line in data:
 
             temp = csv[csvCount]
             temp = temp.replace(":", "")
+            Func.append(Gene+"\t"+temp+"\n")
+
+
             # print ("Ancestors")
             # print(gr.incidents(temp))
 
@@ -188,11 +198,12 @@ for line in data:
     del Ancestors[:]
     for Node in ModifiedAncestors:
 
+
         # OutParents.write(Node)
         try:
 
             print(vec.index(Node))
-
+            Testing.write(Node)
             BinVec[vec.index(Node)] = 1
         # Parents = gr.incidents(temp)
 
@@ -203,13 +214,18 @@ for line in data:
                 print("Already Missing")
             except (KeyError, ValueError):
                 Missing.append(Node)
-    
+
     outputfile.write(Gene)
     outputfile.write(',')
 
+    for x in ModifiedAncestors:
+        Func.append(Gene+"\t"+x+"\n")
+
     for key in BinVec:
         outputfile.write(str(key))
+
     outputfile.write('\n')
+    Func.append('\n')
 
     print(Gene, BinVec)
 
@@ -230,5 +246,84 @@ print(len(Missing))
 for key in Missing:
     OutMissing.write(str(Missing))
     OutMissing.write('\n')
+
+
+###############################################
+newFUNC = []
+#Test
+
+geneSeen = []
+
+#outputfile.close()
+
+tempy = open('./FUNCGenes.txt', mode='wb')
+FuncMatch = open('./Gene&GO_F_With_Lethality.txt', mode='rb')
+FUNCoutputfile = open('./Gene_With_GO_FUNC.txt', mode='wb')
+
+tempySeen = []
+
+Counter = 0
+
+
+
+
+
+for line in FuncMatch:
+    split_string = line.split(",")
+
+    gene = split_string[0]
+
+    lethality = split_string[-1]
+    lethality = lethality.replace("\r\n","")
+
+
+    if (lethality == "lethal"):
+        for line in Func:
+            if line == "\n":
+                continue
+
+            tempFUNC = []
+            if gene in line and line not in geneSeen:
+                geneSeen.append(line)
+                line = line.strip()
+                line = line.replace("GO","GO:")
+                tempFUNC.append(str(line) + "\t1")
+                #print tempFUNC
+                newFUNC.append(tempFUNC)
+            if gene in line and gene not in tempySeen:
+                tempySeen.append(gene)
+                tempy.write(gene+",lethal\n")
+                Counter = Counter +1
+                print Counter
+    if (lethality == "viable"):
+        for line in Func:
+            if line == "\n":
+                continue
+
+            tempFUNC = []
+            if gene in line and line not in geneSeen:
+                geneSeen.append(line)
+                line = line.strip()
+                line = line.replace("GO","GO:")
+                tempFUNC.append(str(line) + "\t0")
+
+                #print tempFUNC
+                newFUNC.append(tempFUNC)
+            if gene in line and gene not in tempySeen:
+                tempySeen.append(gene)
+                tempy.write(gene+",viable\n")
+                Counter = Counter +1
+                print Counter
+
+        #print "Something"
+        #print tempFUNC
+#FUNCoutputfile.write("\n".join(newFUNC))
+
+
+for element in newFUNC:
+    FUNCoutputfile.write(" ".join(element) + "\n")
+
+########################################################
+
 
 print(datetime.now() - startTime)

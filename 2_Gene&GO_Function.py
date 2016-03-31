@@ -7,9 +7,8 @@ data = {}
 import pprint
 outputfile = open('./Gene&GO_F.txt', mode='wb')
 GOoutputfile = open('./Gene_With_Only_GO.txt', mode='wb')
-FUNCoutputfile = open('./Gene_With_GO_FUNC.txt', mode='wb')
 Seen =[]
-FUNC = []
+
 geneAssociation = open('./gene_association.sgd', mode= "rb")
 
 
@@ -25,7 +24,7 @@ for line in geneAssociation:
         if genome not in Seen:
             Seen.append(genome)
             GOoutputfile.write(genome + "\n")
-        FUNC.append(genome + "\t" + GO  + "\n")
+
 for line in open('./Single_Lethality_Genes.txt', mode='rb'):
     line = line.rstrip()
     split_line = line.split(",")
@@ -34,43 +33,6 @@ for line in open('./Single_Lethality_Genes.txt', mode='rb'):
 
 
 ################################################################
-
-newFUNC = []
-
-geneSeen = []
-for line in open('./Single_Lethality_Genes.txt', mode='rb'):
-    line = line.rstrip()
-    split_line = line.split(",")
-    gene = split_line[0]
-    lethality = split_line[1]
-    #print "Lethality is " + lethality
-    if (lethality == "inviable"):
-        for line in FUNC:
-            tempFUNC = []
-            if gene in line and line not in geneSeen:
-                geneSeen.append(line)
-                line = line.strip()
-                tempFUNC.append(str(line) + "\t1")
-                print tempFUNC
-                newFUNC.append(tempFUNC)
-    if (lethality == "viable"):
-        for line in FUNC:
-            tempFUNC = []
-            if gene in line and line not in geneSeen:
-                geneSeen.append(line)
-                line = line.replace('\n','')
-                tempFUNC.append(str(line) + "\t0")
-
-                print tempFUNC
-                newFUNC.append(tempFUNC)
-
-
-
-
-for element in newFUNC:
-    #FUNCoutputfile.writelines(str(element)+"\n")
-    FUNCoutputfile.write(" ".join(element) + "\n")
-
 
 ###############################################################
 
@@ -92,6 +54,7 @@ inputfile = open('./Gene&GO_F.txt', mode='rb')
 outputfile = open('./Gene&GO_F_With_Lethality.txt', mode='wb')
 LethalOutput = open('./Lethal_Yeast.txt', mode='wb')
 Viable_LethalOutput= open('./Lethal&Viable_Yeast.txt', mode='wb')
+Genes = open('./WEKAGenes.txt', mode='wb')
 inputfile = csv.reader(inputfile, delimiter=',')
 
 previous = None
@@ -104,12 +67,13 @@ VLwriter = csv.writer(Viable_LethalOutput)
 
 for rows in inputfile:
 
-        if "viable" in str(rows[-1]) or "inviable" in str(rows[-1]):
+        if "viable" in str(rows[-1]) or "lethal" in str(rows[-1]):
 
             if "GO" in str(rows):
+                Genes.write(rows[0]+","+rows[-1]+"\n")
                 writer.writerow(rows)
                 VLwriter.writerow(rows[0:1])
-                if "inviable" in str(rows[-1]):
+                if "lethal" in str(rows[-1]):
                     Lethalwriter.writerow(rows[0:1])
 
                 print rows

@@ -86,7 +86,7 @@ for line in inputfile:
             outputfile.write(bit)
             Viable_LethalOutput.write(bits[0] + "\n")
         if(l):
-            bit = bits[0]+",inviable\n"
+            bit = bits[0]+",lethal\n"
             print (bit)
             outputfile.write(bit)
             LethalOutput.write(bits[0] + "\n")
